@@ -1,5 +1,6 @@
 file(REMOVE_RECURSE
   "CMakeFiles/AIV.dir/src/ai.cpp.o"
+  "CMakeFiles/AIV.dir/src/ringbuffer.cpp.o"
   "CMakeFiles/AIV.dir/test/main.cpp.o"
   "AIV.pdb"
   "AIV"

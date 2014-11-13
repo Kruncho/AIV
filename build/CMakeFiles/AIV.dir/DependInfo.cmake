@@ -5,6 +5,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
   "/home/vincent/Projects/AIV/src/ai.cpp" "/home/vincent/Projects/AIV/build/CMakeFiles/AIV.dir/src/ai.cpp.o"
+  "/home/vincent/Projects/AIV/src/ringbuffer.cpp" "/home/vincent/Projects/AIV/build/CMakeFiles/AIV.dir/src/ringbuffer.cpp.o"
   "/home/vincent/Projects/AIV/test/main.cpp" "/home/vincent/Projects/AIV/build/CMakeFiles/AIV.dir/test/main.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
