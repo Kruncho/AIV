@@ -2,6 +2,8 @@
 
 AI::AI()
 {
+    const bool show = true;
+
     cv::VideoCapture cap(0);
 
     if (!cap.isOpened())
@@ -21,39 +23,35 @@ AI::AI()
 
     cv::namedWindow(_window_title, CV_WINDOW_AUTOSIZE);
 
-    bool first_frame = true; /* To do just in the first loop */
-    bool show = true;
+    _frame_counter = 0;
 
-    _count = 0;
+    _buffer = new RingBuffer(64);
 
-    _buffer = new RingBuffer(128);
+    std::cout << "Wait for " << _buffer->getSize() << " samples." << std::endl;
 
     while (1)
     {
-        cap >> _current_color_frame;
+        cap >> _color_frame;
 
-        cvtColor(_current_color_frame, _current_gray_frame, CV_BGR2GRAY);
+        _buffer->add(&_color_frame);
+        _frame_counter++;
 
-        if (first_frame)
-        {
-            first_frame = false;
-            _prev_gray_frame = _current_gray_frame;
-        }
+        if(_buffer->getMarker() == EMPTY) /* Fill the buffer */
+            continue;
+
+        cvtColor(_color_frame, _gray_frame, CV_BGR2GRAY);
 
         this->process();
 
         if(show)
-            cv::imshow(_window_title, _current_color_frame); //show the frame
+            cv::imshow(_window_title, _color_frame); //show the frame
 
         if (cv::waitKey(30) == 27) // 27 = 'esc' button
         {
             std::cout << "esc key is pressed by user" << std::endl;
             break;
         }
-
-        this->updateFrames();
-
-        _count++;
+        std::cout << _frame_counter << std::endl;
     }
 }
 
@@ -64,13 +62,8 @@ AI::~AI()
 
 void AI::process()
 {
-    _buffer->add(&_current_color_frame);
+
 }
 
-void AI::updateFrames()
-{
-    _prev_gray_frame = _current_gray_frame;
-    _prev_color_frame = _current_color_frame;
-}
 
 

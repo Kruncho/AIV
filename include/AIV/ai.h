@@ -35,13 +35,8 @@ class AI
          */
         void process();
 
-        /**
-         * @brief Save the color and the gray current frames for one more loop
-         */
-        void updateFrames();
-
     protected:
-        RingBuffer *_buffer;
+        RingBuffer *_buffer; ///< The ring buffer to store the frames
 
         double _cols; ///< Nb colums
         double _rows; ///< Nb rows
@@ -49,10 +44,8 @@ class AI
 
         std::string _window_title; ///< the name that apears in the window
 
-        cv::Mat _prev_color_frame; ///<
-        cv::Mat _prev_gray_frame;
-        cv::Mat _current_color_frame;
-        cv::Mat _current_gray_frame;
+        cv::Mat _color_frame;
+        cv::Mat _gray_frame;
 
         int _count; ///< Frames counter
 
