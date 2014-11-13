@@ -1,0 +1,23 @@
+ --------
+| Author |
+ --------
+
+Vincent Rose : vincent.rose95@gmail.com
+
+ -------------------
+| What does it do ? |
+ -------------------
+
+Try to do an arificial intelligence based on vision.
+
+ -----------
+| Libraries |
+ -----------
+
+You need to install OpenCV.
+
+ -----------------------
+| Create the executable |
+ -----------------------
+
+Go to the build folder and do "cmake ..", then "make."
