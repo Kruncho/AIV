@@ -150,6 +150,9 @@ AIV: /usr/lib/libopencv_features2d.so.2.4.10
 AIV: /usr/lib/libopencv_core.so.2.4.10
 AIV: /usr/lib/libopencv_contrib.so.2.4.10
 AIV: /usr/lib/libopencv_calib3d.so.2.4.10
+AIV: /usr/lib64/libboost_thread.so
+AIV: /usr/lib64/libboost_system.so
+AIV: /usr/lib64/libboost_filesystem.so
 AIV: /lib64/libGLU.so
 AIV: /lib64/libGL.so
 AIV: /lib64/libSM.so

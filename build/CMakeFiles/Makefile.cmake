@@ -19,6 +19,7 @@ set(CMAKE_MAKEFILE_DEPENDS
   "/usr/share/cmake-3.0/Modules/Compiler/GNU-C.cmake"
   "/usr/share/cmake-3.0/Modules/Compiler/GNU-CXX.cmake"
   "/usr/share/cmake-3.0/Modules/Compiler/GNU.cmake"
+  "/usr/share/cmake-3.0/Modules/FindBoost.cmake"
   "/usr/share/cmake-3.0/Modules/Platform/Linux-GNU-C.cmake"
   "/usr/share/cmake-3.0/Modules/Platform/Linux-GNU-CXX.cmake"
   "/usr/share/cmake-3.0/Modules/Platform/Linux-GNU.cmake"

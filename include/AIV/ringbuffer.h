@@ -35,19 +35,19 @@ class RingBuffer
          * @brief Return the current index from the buffer
          * @return the value of the index
          */
-        int getIndex() {return _index;}
+        int getIndex() const {return _index ;}
 
         /**
          * @brief Return the marker at the current index
          * @return the value of the marker
          */
-        int getMarker() {return _buffer_sample[_index].marker;}
+        int getMarker() const {return _buffer_sample[_index].marker;}
 
         /**
          * @brief Return the buffer size
          * @return the size
          */
-        int getSize() {return _size;}
+        int getSize() const {return _size;}
 
         /**
          * @brief Get the frame wanted in the buffer

@@ -10,6 +10,7 @@
 
 #include <cv.h>
 #include <highgui.h>
+#include <boost/thread.hpp>
 
 #include "AIV/ringbuffer.h"
 
@@ -35,8 +36,14 @@ class AI
          */
         void process();
 
+        /**
+         * @brief Thread to dump samples into the buffer
+         */
+        void dumpSamples();
+
     protected:
-        RingBuffer *_buffer; ///< The ring buffer to store the frames
+        cv::VideoCapture _cap; ///< The video capture
+        RingBuffer *_ringBuffer; ///< The ring buffer to store the frames
 
         double _cols; ///< Nb colums
         double _rows; ///< Nb rows
@@ -47,7 +54,9 @@ class AI
         cv::Mat _color_frame;
         cv::Mat _gray_frame;
 
-        int _count; ///< Frames counter
+        int _frame_counter; ///< Frames counter
+
+        boost::thread _thread_dumpSamples;
 
 };
 

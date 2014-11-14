@@ -6,7 +6,7 @@
 
 int main(int argc, char** argv)
 {
-    AI ai = AI();
+    AI ai;
 
     EXIT_SUCCESS;
 }
