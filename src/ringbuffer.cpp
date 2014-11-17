@@ -5,7 +5,7 @@ RingBuffer::RingBuffer(int size)
     _buffer_sample = new bufferSample[size];
     _size = size;
 
-    this->initBuffer();
+    initBuffer();
 }
 
 RingBuffer::~RingBuffer()
@@ -45,4 +45,14 @@ void RingBuffer::initBuffer()
         _buffer_sample[i].frame = new cv::Mat;
         _buffer_sample[i].marker = EMPTY;
     }
+}
+
+void RingBuffer::copyBuffer(RingBuffer buffer)
+{
+    if(_size == buffer.getSize())
+        for(int i = 0; i < _size; i++)
+        {
+            *_buffer_sample[i].frame = *buffer.getFrameAt(-i);
+            _buffer_sample[i].marker = buffer.getMarker();
+        }
 }

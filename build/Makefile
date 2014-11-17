@@ -54,7 +54,7 @@ CMAKE_BINARY_DIR = /home/vincent/Projects/AIV/build
 # Special rule for the target edit_cache
 edit_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake cache editor..."
-	/usr/bin/cmake-gui -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+	/usr/bin/ccmake -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
 .PHONY : edit_cache
 
 # Special rule for the target edit_cache
@@ -139,6 +139,30 @@ src/ai.cpp.s:
 	$(MAKE) -f CMakeFiles/AIV.dir/build.make CMakeFiles/AIV.dir/src/ai.cpp.s
 .PHONY : src/ai.cpp.s
 
+src/face.o: src/face.cpp.o
+.PHONY : src/face.o
+
+# target to build an object file
+src/face.cpp.o:
+	$(MAKE) -f CMakeFiles/AIV.dir/build.make CMakeFiles/AIV.dir/src/face.cpp.o
+.PHONY : src/face.cpp.o
+
+src/face.i: src/face.cpp.i
+.PHONY : src/face.i
+
+# target to preprocess a source file
+src/face.cpp.i:
+	$(MAKE) -f CMakeFiles/AIV.dir/build.make CMakeFiles/AIV.dir/src/face.cpp.i
+.PHONY : src/face.cpp.i
+
+src/face.s: src/face.cpp.s
+.PHONY : src/face.s
+
+# target to generate assembly for a file
+src/face.cpp.s:
+	$(MAKE) -f CMakeFiles/AIV.dir/build.make CMakeFiles/AIV.dir/src/face.cpp.s
+.PHONY : src/face.cpp.s
+
 src/ringbuffer.o: src/ringbuffer.cpp.o
 .PHONY : src/ringbuffer.o
 
@@ -199,6 +223,9 @@ help:
 	@echo "... src/ai.o"
 	@echo "... src/ai.i"
 	@echo "... src/ai.s"
+	@echo "... src/face.o"
+	@echo "... src/face.i"
+	@echo "... src/face.s"
 	@echo "... src/ringbuffer.o"
 	@echo "... src/ringbuffer.i"
 	@echo "... src/ringbuffer.s"

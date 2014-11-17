@@ -67,6 +67,12 @@ class RingBuffer
          */
         void initBuffer();
 
+        /**
+         * @brief Copy the desired Buffer to this one
+         * @param buffer    The buffer to copy
+         */
+        void copyBuffer(RingBuffer buffer);
+
     protected:
         int _size; ///< The buffer size
         int _index; ///< The buffer current index

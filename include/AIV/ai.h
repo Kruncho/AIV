@@ -56,7 +56,9 @@ class AI
 
         int _frame_counter; ///< Frames counter
 
-        boost::thread _thread_dumpSamples;
+        boost::thread _thread_dumpSamples; ///< Thread to dump the samples to the ring buffer
+
+        bool _end_prog;
 
 };
 
