@@ -49,9 +49,32 @@ include CMakeFiles/AIV.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/AIV.dir/flags.make
 
+CMakeFiles/AIV.dir/src/faces.cpp.o: CMakeFiles/AIV.dir/flags.make
+CMakeFiles/AIV.dir/src/faces.cpp.o: ../src/faces.cpp
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/vincent/Projects/AIV/build/CMakeFiles $(CMAKE_PROGRESS_1)
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/AIV.dir/src/faces.cpp.o"
+	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/AIV.dir/src/faces.cpp.o -c /home/vincent/Projects/AIV/src/faces.cpp
+
+CMakeFiles/AIV.dir/src/faces.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/AIV.dir/src/faces.cpp.i"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/vincent/Projects/AIV/src/faces.cpp > CMakeFiles/AIV.dir/src/faces.cpp.i
+
+CMakeFiles/AIV.dir/src/faces.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/AIV.dir/src/faces.cpp.s"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/vincent/Projects/AIV/src/faces.cpp -o CMakeFiles/AIV.dir/src/faces.cpp.s
+
+CMakeFiles/AIV.dir/src/faces.cpp.o.requires:
+.PHONY : CMakeFiles/AIV.dir/src/faces.cpp.o.requires
+
+CMakeFiles/AIV.dir/src/faces.cpp.o.provides: CMakeFiles/AIV.dir/src/faces.cpp.o.requires
+	$(MAKE) -f CMakeFiles/AIV.dir/build.make CMakeFiles/AIV.dir/src/faces.cpp.o.provides.build
+.PHONY : CMakeFiles/AIV.dir/src/faces.cpp.o.provides
+
+CMakeFiles/AIV.dir/src/faces.cpp.o.provides.build: CMakeFiles/AIV.dir/src/faces.cpp.o
+
 CMakeFiles/AIV.dir/src/ai.cpp.o: CMakeFiles/AIV.dir/flags.make
 CMakeFiles/AIV.dir/src/ai.cpp.o: ../src/ai.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/vincent/Projects/AIV/build/CMakeFiles $(CMAKE_PROGRESS_1)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/vincent/Projects/AIV/build/CMakeFiles $(CMAKE_PROGRESS_2)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/AIV.dir/src/ai.cpp.o"
 	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/AIV.dir/src/ai.cpp.o -c /home/vincent/Projects/AIV/src/ai.cpp
 
@@ -74,7 +97,7 @@ CMakeFiles/AIV.dir/src/ai.cpp.o.provides.build: CMakeFiles/AIV.dir/src/ai.cpp.o
 
 CMakeFiles/AIV.dir/src/ringbuffer.cpp.o: CMakeFiles/AIV.dir/flags.make
 CMakeFiles/AIV.dir/src/ringbuffer.cpp.o: ../src/ringbuffer.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/vincent/Projects/AIV/build/CMakeFiles $(CMAKE_PROGRESS_2)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/vincent/Projects/AIV/build/CMakeFiles $(CMAKE_PROGRESS_3)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/AIV.dir/src/ringbuffer.cpp.o"
 	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/AIV.dir/src/ringbuffer.cpp.o -c /home/vincent/Projects/AIV/src/ringbuffer.cpp
 
@@ -94,29 +117,6 @@ CMakeFiles/AIV.dir/src/ringbuffer.cpp.o.provides: CMakeFiles/AIV.dir/src/ringbuf
 .PHONY : CMakeFiles/AIV.dir/src/ringbuffer.cpp.o.provides
 
 CMakeFiles/AIV.dir/src/ringbuffer.cpp.o.provides.build: CMakeFiles/AIV.dir/src/ringbuffer.cpp.o
-
-CMakeFiles/AIV.dir/src/face.cpp.o: CMakeFiles/AIV.dir/flags.make
-CMakeFiles/AIV.dir/src/face.cpp.o: ../src/face.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/vincent/Projects/AIV/build/CMakeFiles $(CMAKE_PROGRESS_3)
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/AIV.dir/src/face.cpp.o"
-	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/AIV.dir/src/face.cpp.o -c /home/vincent/Projects/AIV/src/face.cpp
-
-CMakeFiles/AIV.dir/src/face.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/AIV.dir/src/face.cpp.i"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/vincent/Projects/AIV/src/face.cpp > CMakeFiles/AIV.dir/src/face.cpp.i
-
-CMakeFiles/AIV.dir/src/face.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/AIV.dir/src/face.cpp.s"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/vincent/Projects/AIV/src/face.cpp -o CMakeFiles/AIV.dir/src/face.cpp.s
-
-CMakeFiles/AIV.dir/src/face.cpp.o.requires:
-.PHONY : CMakeFiles/AIV.dir/src/face.cpp.o.requires
-
-CMakeFiles/AIV.dir/src/face.cpp.o.provides: CMakeFiles/AIV.dir/src/face.cpp.o.requires
-	$(MAKE) -f CMakeFiles/AIV.dir/build.make CMakeFiles/AIV.dir/src/face.cpp.o.provides.build
-.PHONY : CMakeFiles/AIV.dir/src/face.cpp.o.provides
-
-CMakeFiles/AIV.dir/src/face.cpp.o.provides.build: CMakeFiles/AIV.dir/src/face.cpp.o
 
 CMakeFiles/AIV.dir/test/main.cpp.o: CMakeFiles/AIV.dir/flags.make
 CMakeFiles/AIV.dir/test/main.cpp.o: ../test/main.cpp
@@ -143,17 +143,17 @@ CMakeFiles/AIV.dir/test/main.cpp.o.provides.build: CMakeFiles/AIV.dir/test/main.
 
 # Object files for target AIV
 AIV_OBJECTS = \
+"CMakeFiles/AIV.dir/src/faces.cpp.o" \
 "CMakeFiles/AIV.dir/src/ai.cpp.o" \
 "CMakeFiles/AIV.dir/src/ringbuffer.cpp.o" \
-"CMakeFiles/AIV.dir/src/face.cpp.o" \
 "CMakeFiles/AIV.dir/test/main.cpp.o"
 
 # External object files for target AIV
 AIV_EXTERNAL_OBJECTS =
 
+AIV: CMakeFiles/AIV.dir/src/faces.cpp.o
 AIV: CMakeFiles/AIV.dir/src/ai.cpp.o
 AIV: CMakeFiles/AIV.dir/src/ringbuffer.cpp.o
-AIV: CMakeFiles/AIV.dir/src/face.cpp.o
 AIV: CMakeFiles/AIV.dir/test/main.cpp.o
 AIV: CMakeFiles/AIV.dir/build.make
 AIV: /usr/lib/libopencv_videostab.so.2.4.10
@@ -205,9 +205,9 @@ AIV: CMakeFiles/AIV.dir/link.txt
 CMakeFiles/AIV.dir/build: AIV
 .PHONY : CMakeFiles/AIV.dir/build
 
+CMakeFiles/AIV.dir/requires: CMakeFiles/AIV.dir/src/faces.cpp.o.requires
 CMakeFiles/AIV.dir/requires: CMakeFiles/AIV.dir/src/ai.cpp.o.requires
 CMakeFiles/AIV.dir/requires: CMakeFiles/AIV.dir/src/ringbuffer.cpp.o.requires
-CMakeFiles/AIV.dir/requires: CMakeFiles/AIV.dir/src/face.cpp.o.requires
 CMakeFiles/AIV.dir/requires: CMakeFiles/AIV.dir/test/main.cpp.o.requires
 .PHONY : CMakeFiles/AIV.dir/requires
 

@@ -13,6 +13,7 @@
 #include <boost/thread.hpp>
 
 #include "AIV/ringbuffer.h"
+#include "AIV/faces.h"
 
 /**
  * @class AI
@@ -39,7 +40,7 @@ class AI
         /**
          * @brief Thread to dump samples into the buffer
          */
-        void dumpSamples();
+        void videoStream();
 
     protected:
         cv::VideoCapture _cap; ///< The video capture
@@ -56,7 +57,7 @@ class AI
 
         int _frame_counter; ///< Frames counter
 
-        boost::thread _thread_dumpSamples; ///< Thread to dump the samples to the ring buffer
+        boost::thread _thread_videoStream; ///< Thread to dump the samples to the ring buffer
 
         bool _end_prog;
 

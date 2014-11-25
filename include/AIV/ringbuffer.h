@@ -54,7 +54,7 @@ class RingBuffer
          * @param index    start from 0 to the minus buffer size
          * @return A pointer to the frame
          */
-        cv::Mat *getFrameAt(int index);
+        cv::Mat getFrameAt(int index);
 
         /**
          * @brief Add a frame to the buffer
@@ -66,12 +66,6 @@ class RingBuffer
          * @brief Buffer initialization
          */
         void initBuffer();
-
-        /**
-         * @brief Copy the desired Buffer to this one
-         * @param buffer    The buffer to copy
-         */
-        void copyBuffer(RingBuffer buffer);
 
     protected:
         int _size; ///< The buffer size

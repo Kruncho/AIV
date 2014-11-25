@@ -23,17 +23,20 @@ AI::AI()
 
     _frame_counter = 0;
     _end_prog = false;
-    _ringBuffer = new RingBuffer(8);
+    _ringBuffer =  new RingBuffer(8);
 
     //std::cout << "Wait for " << _ringBuffer->getSize() << " samples." << std::endl;
 
-    _thread_dumpSamples = boost::thread(&AI::dumpSamples, this);
+    _thread_videoStream = boost::thread(&AI::videoStream, this);
 
     while (!_end_prog)
     {
         std::system("clear");
         process();
     }
+
+    _thread_videoStream.join();
+
 }
 
 AI::~AI()
@@ -41,20 +44,13 @@ AI::~AI()
     delete _ringBuffer;
 }
 
-void AI::dumpSamples()
+void AI::videoStream()
 {
     const bool show = true;
 
     while(!_end_prog)
     {
         _cap >> _color_frame;
-
-        _ringBuffer->add(&_color_frame);
-
-        if(_ringBuffer->getMarker() == EMPTY) /* Fill the buffer */
-            continue;
-
-        cvtColor(_color_frame, _gray_frame, CV_BGR2GRAY);
 
         if(show)
             cv::imshow(_window_title, _color_frame); //show the frame
@@ -66,7 +62,6 @@ void AI::dumpSamples()
             break;
         }
 
-        //std::cout << _frame_counter << std::endl;
         _frame_counter++;
     }
 }
@@ -98,7 +93,17 @@ void AI::process()
         std::getline(std::cin, answer);
     }
 
+    _ringBuffer->add(&_color_frame);
 
+    cv::Mat picture = _ringBuffer->getFrameAt(-1);
+
+    Faces *face = new Faces(name, &picture);
+
+    cv::imshow("Face", picture);
+
+    std::getline(std::cin, name);
+
+    delete face;
 
     _end_prog = true;
 

@@ -25,14 +25,14 @@ void RingBuffer::add(cv::Mat *color_frame)
     //std::cout << _index << std::endl;
 }
 
-cv::Mat *RingBuffer::getFrameAt(int index)
+cv::Mat RingBuffer::getFrameAt(int index)
 {
     if( _buffer_sample[(_index + index) % _size].marker == MARKED)
-        return _buffer_sample[(_index + index) % _size].frame;
+        return *_buffer_sample[(_index + index) % _size].frame;
     else
     {
         std::cout << "The buffer sample don't exists yet" << std::endl;
-        return NULL;
+        return cv::Mat::zeros(1, 1, CV_8U);
     }
 }
 
@@ -47,12 +47,4 @@ void RingBuffer::initBuffer()
     }
 }
 
-void RingBuffer::copyBuffer(RingBuffer buffer)
-{
-    if(_size == buffer.getSize())
-        for(int i = 0; i < _size; i++)
-        {
-            *_buffer_sample[i].frame = *buffer.getFrameAt(-i);
-            _buffer_sample[i].marker = buffer.getMarker();
-        }
-}
+
